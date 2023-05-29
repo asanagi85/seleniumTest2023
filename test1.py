@@ -1,1 +1,2 @@
-print("selenium2023 test")
+import os
+os.getcwd()
