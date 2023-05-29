@@ -18,9 +18,10 @@ table = driver.find_element(By.XPATH,'//*[@id="main"]/div[7]/table')
 
 rows = table.find_elements(By.TAG_NAME, "tr")  # Find all the rows in the table
 for row in rows:
-    columns = row.find_elements(By.TAG_NAME, "td")  # Find the columns in each row
-    for column in columns:
-        print(column.text)
+    # columns = row.find_elements(By.TAG_NAME, "td")  # Find the columns in each row
+    # for column in columns:
+    #     print(column.text)
+    print(type(row))
 
             
 #미국채권인지 아닌지 체크하는 메소드
