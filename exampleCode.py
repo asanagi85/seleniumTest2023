@@ -1,5 +1,6 @@
 from selenium import webdriver
 
+
 # Chrome 드라이버 경로 설정 (본인 환경에 맞게 수정)
 driver_path = '경로/chromedriver.exe'
 
