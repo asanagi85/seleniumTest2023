@@ -27,23 +27,39 @@ search = driver.find_element(By.NAME,'ACT_login')
 search.click()
 time.sleep(1)
 
+#미국채권인지 아닌지 체크하는 메소드
+#미국채권이라면 제로쿠폰인가 아닌가 체크
+# 제로쿠폰이 아니라면, 채권명, 단가, 리마와리, 이자지급일, 상환일, 판매단위, 잔존년수, 등급취득
+driver.get('https://trading0.sbisec.co.jp/bff/fbonds/BffBuyOrderList.do?dayNightKbn=1')
+
+
 # 테이블의 모든 행 가져오기
-table = driver.find_element_by_tag_name('table')
-rows = table.find_elements_by_tag_name('tr')
+# table = driver.find_element_by_tag_name('table')
+# table = driver.find_elements(By.TAG_NAME,'table')
+# rows = table.find_elements_by_tag_name('tr')
+rows = driver.find_elements(By.TAG_NAME,'tr')
+# rows = []
+print(rows)
+# yes = table[14]
+# print(table[14])
+# print(yes)
 
-# 행을 리스트로 변환하여 데이터 저장
-data = []
-for row in rows:
-    # 행의 모든 셀 가져오기
-    cells = row.find_elements_by_tag_name('td')
-    row_data = []
-    for cell in cells:
-        row_data.append(cell.text)
-    data.append(row_data)
 
-# 데이터 출력
-for row_data in data:
-    print(row_data)
 
-# 브라우저 종료
-driver.quit()
+# # 행을 리스트로 변환하여 데이터 저장
+# data = []
+# for row in table:
+#     # 행의 모든 셀 가져오기
+#     # cells = row.find_elements_by_tag_name('td')
+#     cells = row.find_elements(By.TAG_NAME,'td')
+#     row_data = []
+#     for cell in cells:
+#         row_data.append(cell.text)
+#     data.append(row_data)
+
+# # 데이터 출력
+# for row_data in data:
+#     print(row_data)
+
+# # 브라우저 종료
+# driver.quit()
